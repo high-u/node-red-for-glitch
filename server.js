@@ -16,7 +16,15 @@ var settings = {
   httpAdminRoot: "/",
   httpNodeRoot: "/api",
   uiPort: 8080,
-  functionGlobalContext: {}    // グローバルコンテキストを有効化
+  functionGlobalContext: {},    // グローバルコンテキストを有効化
+  adminAuth: {
+    type: "credentials",
+    users: [{
+      username: process.env.NODE_RED_USER,
+      password: process.env.NODE_RED_PW,
+      permissions: "*"
+    }]
+  }
 };
 
 // サーバと設定とランタイムの初期化
