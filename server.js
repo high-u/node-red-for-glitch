@@ -16,7 +16,9 @@ var settings = {
   httpAdminRoot: "/",
   httpNodeRoot: "/api",
   uiPort: 8080,
-  functionGlobalContext: {},    // enables global context
+  functionGlobalContext: {    // enables global context
+    // os:require('os'),
+  },
   adminAuth: {
     type: "credentials",
     users: [{
@@ -24,6 +26,16 @@ var settings = {
       password: process.env.NODE_RED_PW,
       permissions: "*"
     }]
+  },
+  debugMaxLength: 1000,
+  debugUseColors: true,
+  flowFile: 'flows.json',
+  ui: { path: "ui" },
+  logging: {
+    console: {
+      level: "trace",
+      metrics: true
+    }
   }
 };
 
