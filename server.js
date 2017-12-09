@@ -2,21 +2,21 @@ var http = require('http');
 var express = require("express");
 var RED = require("node-red");
 
-// Expressアプリケーションの生成
+// Create an Express app
 var app = express();
 
-// 静的コンテンツのルートを追加
+// Add a simple route for static content served from 'public'
 app.use("/", express.static("public"));
 
-// サーバの生成
+// Create a server
 var server = http.createServer(app);
 
-// 設定オブジェクトの生成 - 他のオプションについてはデフォルトの 'settings.js' ファイルを参照してください
+// Create the settings object - see default settings.js file for other options
 var settings = {
   httpAdminRoot: "/",
   httpNodeRoot: "/api",
   uiPort: 8080,
-  functionGlobalContext: {},    // グローバルコンテキストを有効化
+  functionGlobalContext: {},    // enables global context
   adminAuth: {
     type: "credentials",
     users: [{
@@ -27,16 +27,16 @@ var settings = {
   }
 };
 
-// サーバと設定とランタイムの初期化
+// Initialise the runtime with a server and settings
 RED.init(server, settings);
 
-// エディタUIのルートを '/' に指定
+// Serve the editor UI from /
 app.use(settings.httpAdminRoot, RED.httpAdmin);
 
-// HTTP node UIのルートを '/api' に指定
+// Serve the http nodes UI from /api
 app.use(settings.httpNodeRoot, RED.httpNode);
 
 server.listen(8080);
 
-// ランタイム起動
+// Start the runtime
 RED.start();
