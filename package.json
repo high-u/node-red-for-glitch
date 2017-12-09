@@ -1,0 +1,31 @@
+{
+  "name": "node-red-for-glitch",
+  "version": "0.0.1",
+  "description": "Node-RED for Glitch.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/high-u/node-red-for-glitch.git"
+  },
+  "keywords": [
+    "node-red",
+    "glitch",
+    "node.js"
+  ],
+  "author": "high-u <zen.crazyd@gmail.com> (https://github.com/high-u)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/high-u/node-red-for-glitch/issues"
+  },
+  "homepage": "https://github.com/high-u/node-red-for-glitch#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "node-red": "^0.17.5"
+  }
+}
