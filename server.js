@@ -14,7 +14,7 @@ var server = http.createServer(app);
 // Create the settings object - see default settings.js file for other options
 var settings = {
   httpAdminRoot: "/",
-  httpNodeRoot: "/api",
+  httpNodeRoot: "/",
   uiPort: 8080,
   functionGlobalContext: {    // enables global context
     // os:require('os'),
@@ -46,7 +46,7 @@ RED.init(server, settings);
 // Serve the editor UI from /
 app.use(settings.httpAdminRoot, RED.httpAdmin);
 
-// Serve the http nodes UI from /api
+// Serve the http nodes UI from /
 app.use(settings.httpNodeRoot, RED.httpNode);
 
 server.listen(8080);
