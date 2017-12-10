@@ -30,8 +30,8 @@ var settings = {
   debugMaxLength: 1000,
   debugUseColors: true,
   flowFile: '/app/flows.json',
-  userDir: '/app/.node-red',
-  nodesDir: '/app/.node-red/nodes',
+  userDir: '/app/node-red',
+  nodesDir: '/app/node-red/nodes',
   ui: { path: "ui" },
   logging: {
     console: {
