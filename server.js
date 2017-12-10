@@ -14,7 +14,7 @@ var server = http.createServer(app);
 // Create the settings object - see default settings.js file for other options
 var settings = {
   httpAdminRoot: "/",
-  httpNodeRoot: "/",
+  httpNodeRoot: "/api/",
   uiPort: 8080,
   functionGlobalContext: {    // enables global context
     // os:require('os'),
@@ -29,7 +29,7 @@ var settings = {
   },
   debugMaxLength: 1000,
   debugUseColors: true,
-  flowFile: 'flows.json',
+  flowFile: '/app/flows.json',
   userDir: '/app/.node-red',
   nodesDir: '/app/.node-red/nodes',
   ui: { path: "ui" },
