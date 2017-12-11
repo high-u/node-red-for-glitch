@@ -15,7 +15,7 @@ var server = http.createServer(app);
 var settings = {
   httpAdminRoot: "/",
   httpNodeRoot: "/api/",
-  uiPort: 8080,
+  uiPort: 3000,
   functionGlobalContext: {    // enables global context
     // os:require('os'),
   },
@@ -49,7 +49,7 @@ app.use(settings.httpAdminRoot, RED.httpAdmin);
 // Serve the http nodes UI from /
 app.use(settings.httpNodeRoot, RED.httpNode);
 
-server.listen(8080);
+server.listen(3000);
 
 // Start the runtime
 RED.start();
